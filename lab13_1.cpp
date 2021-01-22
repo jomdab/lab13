@@ -3,11 +3,29 @@ using namespace std;
 
 template <typename T>
 void insertionSort(T d[],int N){
-
+	for (int i = 1; i < N; i++)
+	{	int j=1;
+		T z;
+		while (d[i-j+1]>d[i-j] && j<=i)
+		{
+			z=d[i-j+1];
+			d[i-j+1]=d[i-j];
+			d[i-j]=z;
+			j++;
+		}
+		cout << "Pass " << i << ":";
+		for (int k = 0; k < N; k++)
+		{
+			cout << d[k] << " ";
+		}
+		cout << "\n";
+	}
 }
+	
+
 
 int main(){
-	int a[10] = {12,25,30,44,2,0,4,7,55,25};
+	double a[10] = {69.9,0.25,0.5,1.34,2.1,0,4.8,88.36,11.01,41.25};
 	cout << "Input Array:";
 	for(int i = 0; i < 10; i++) cout << a[i] << " ";
 	cout << "\n\n";
